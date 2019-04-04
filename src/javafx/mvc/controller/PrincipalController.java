@@ -43,6 +43,7 @@ public class PrincipalController implements Initializable {
         Parent root = loader.load();        
         Scene scene = new Scene(root);
         
+        
         //PrincipalController c = loader.getController();
         //c.setStagePrincipal(primaryStage);
         anchorPane.getChildren().add(root);       

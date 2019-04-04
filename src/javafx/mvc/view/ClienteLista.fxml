@@ -26,7 +26,7 @@
                             <Label text="Situação" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                             <TextField fx:id="ftNome" prefHeight="81.0" prefWidth="166.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                             <TextField fx:id="ftSituacao" prefHeight="37.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                            <Button fx:id="btnFiltrar" mnemonicParsing="false" onAction="#btnFiltrarClick" prefHeight="93.0" prefWidth="166.0" text="filtrar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <Button fx:id="btnFiltrar" mnemonicParsing="false" onAction="#btnFiltrarClick" prefHeight="93.0" prefWidth="166.0" styleClass="btn-warning" text="filtrar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                           </children>
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="106.0" />
@@ -87,9 +87,9 @@
             </GridPane>
             <HBox alignment="CENTER" layoutX="57.0" layoutY="406.0" prefHeight="100.0" prefWidth="391.0" spacing="10.0">
               <children>
-                <Button fx:id="btnInserir" mnemonicParsing="false" onAction="#btnInserirClick" text="Inserir" />
+                <Button fx:id="btnInserir" mnemonicParsing="false" onAction="#btnInserirClick" styleClass="btn-primary" text="Inserir" />
                 <Button fx:id="btnAlterar" mnemonicParsing="false" onAction="#btnAlterarClick" text="Alterar" />
-                <Button fx:id="btnExcluir" mnemonicParsing="false" onAction="#btnExcluirClick" text="Excluir" />
+                <Button fx:id="btnExcluir" mnemonicParsing="false" onAction="#btnExcluirClick" styleClass="btn-danger" text="Excluir" />
               </children>
             </HBox>
           </children>

@@ -3,6 +3,7 @@ package javafx.mvc.controller;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -64,7 +65,31 @@ public class ClienteEdicaoController implements Initializable {
         opcoes.add("Ativo");
         opcoes.add("Inativo");
         cbSituacao.setItems(FXCollections.observableArrayList(opcoes));
-      
+
+        txtCnpj.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable,
+                    Boolean oldValue, Boolean newValue) {
+                
+                String valor = txtCnpj.getText();
+                if (valor==null) {
+                    return;
+                }
+                valor = valor.replaceAll("[^0-9]", "");
+                if (!newValue) {
+                    if (txtCnpj.getText().length() == 11) {                       
+                        valor = valor.replaceFirst("([0-9]{3})([0-9]{3})([0-9]{3})([0-9]{2})$",
+                                "$1.$2.$3-$4");
+                    }
+                    if (txtCnpj.getText().length() == 14) {
+                        valor = valor.replaceFirst("([0-9]{2})([0-9]{3})([0-9]{3})([0-9]{4})([0-9]{2})$",
+                                "$1.$2.$3/$4-$5");
+                    }
+                } 
+                txtCnpj.setText(valor);
+            }
+
+        });      
     }
 
     public Stage getDialogStage() {

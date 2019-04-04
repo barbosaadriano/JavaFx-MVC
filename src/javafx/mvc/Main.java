@@ -25,7 +25,9 @@ public class Main extends Application {
                 "/javafx/mvc/view/Principal.fxml"));
         Parent root = loader.load();        
         Scene scene = new Scene(root);
-
+        scene.getStylesheets()
+                .add(this.getClass().getResource("estilo1.css").toString());
+  
         PrincipalController c = loader.getController();
         c.setStagePrincipal(primaryStage);
         
@@ -44,6 +46,9 @@ public class Main extends Application {
         login.setTitle("login");
         Scene sceneLogin = new Scene(pageLogin);
 
+        sceneLogin.getStylesheets()
+                .add(this.getClass().getResource("estilo1.css").toString());
+        
         login.setScene(sceneLogin);
         
         LoginController clogin = loaderLogin.getController();
